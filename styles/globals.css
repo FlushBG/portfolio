@@ -8,3 +8,9 @@
 body {
   font-family: 'Inter', sans-serif;
 }
+
+@layer components {
+  .hero-btn {
+    @apply px-2 py-4 uppercase text-xs md:text-sm tracking-widest text-gray-500 transition-all bh:hover:text-amber-400;
+  }
+}

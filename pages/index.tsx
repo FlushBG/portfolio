@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import About from '../components/About';
+import Section from '../components/Section';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 
@@ -12,12 +13,13 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Header />
-      <section id='hero' className='snap-start'>
-        <Hero />
-      </section>
-      <section id='about' className='snap-center'>
+      <Hero />
+      <Section id='about' snap='snap-center' header='about'>
         <About />
-      </section>
+      </Section>
+      <Section id='experience' snap='snap-center' header='experience'>
+        <p>Exp</p>
+      </Section>
     </div>
   );
 }
