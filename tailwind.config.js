@@ -7,5 +7,8 @@ module.exports = {
   theme: {
     extend: {},
   },
+  corePlugins: {
+    space: false,
+  },
   plugins: [],
 }
