@@ -1,0 +1,6 @@
+@import 'styles/variables';
+
+.body {
+  @include full-screen();
+  background-color: black;
+}
