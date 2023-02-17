@@ -5,6 +5,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Straightler Press';
+  src: url('/fonts/Straightler-Press.ttf');
+}
+
 body {
   font-family: 'Inter', sans-serif;
 }

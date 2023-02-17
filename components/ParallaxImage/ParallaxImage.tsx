@@ -16,9 +16,6 @@ export type ParallaxImageProps = {
   scrollProgress: MotionValue<number>;
   start: number;
   distance: number;
-  x?: number | string;
-  rotate?: number;
-  flip?: boolean;
 };
 
 const ParallaxImage = ({
@@ -27,20 +24,13 @@ const ParallaxImage = ({
   alt,
   scrollProgress,
   start,
-  distance,
-  x,
-  rotate,
-  flip,
+  distance
 }: ParallaxImageProps) => {
   const y = useParallax(scrollProgress, start, distance);
-  const scaleX: number | undefined = useMemo(
-    () => (flip ? -1 : undefined),
-    [flip]
-  );
-
+  
   return (
     <motion.div
-      style={{ y, x, scaleX, rotate }}
+      style={{ y }}
       className={`${classes.base} ${className}`}
     >
       <Image src={src} alt={alt} fill sizes='100vw' />

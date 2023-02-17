@@ -4,72 +4,126 @@
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  background: url('/images/sky-bg.jpg');
-  background-size: cover;
-  background-position: center;
+  background: radial-gradient(circle, rgba(234,249,145,1) 0%, rgba(158,241,162,1) 100%);
   position: relative;
   z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.fullMoon {
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  top: 100px;
-  left: 50%;
-  filter: drop-shadow(0px 0px 30px white) brightness(1.25);
+.title {
+  font-family: 'Straightler Press';
+  font-size: 4.5rem;
+  z-index: 95;
+  filter: drop-shadow(0 0 1px black);
+  color: white;
 }
 
-.backMountain {
+.bottomBar {
   position: absolute;
-  bottom: 205px;
+  width: 100vw;
+  height: 125px;
+  background: linear-gradient(180deg, rgba(30,56,106,0) 0%, rgba(0,26,28,1) 50%);
+  bottom: 0;
+  z-index: 150;
+}
+
+.forest1 {
+  position: absolute;
+  width: calc($sm * 2);
+  height: 550px;
+  bottom: -150px;
+  right: -500px;
+  z-index: 140;
+}
+
+.mountain1 {
+  position: absolute;
   width: $sm;
-  height: 375px;
-  right: -200px;
-  z-index: 2;
-  filter: brightness(0.3) saturate(0.5) hue-rotate(180deg) drop-shadow(0 35px 40px white);
+  height: 225px;
+  bottom: -5px;
+  right: 0;
+  z-index: 130;
 }
 
-.frontMountain {
+.forest2 {
   position: absolute;
+  width: calc($sm + 50px);
+  height: 300px;
+  bottom: 25px;
+  right: -100px;
+  z-index: 120;
+}
+
+.mountain2 {
+  position: absolute;
+  width: calc($sm + 200px);
+  height: 325px;
+  bottom: 0;
+  right: -120px;
+  z-index: 110;
+}
+
+.forest3 {
+  position: absolute;
+  width: calc($sm + 250px);
+  height: 375px;
+  bottom: 55px;
+  right: -190px;
+  z-index: 100;
+}
+
+.mountain3 {
+  position: absolute;
+  width: calc($sm + 150px);
+  height: 385px;
+  bottom: 100px;
+  right: -150px;
+  z-index: 90;
+}
+
+.mountain4 {
+  position: absolute;
+  width: $sm;
+  height: 295px;
+  bottom: 175px;
+  right: -225px;
+  z-index: 80;
+}
+
+.mountain5 {
+  position: absolute;
+  width: calc($sm + 50px);
+  height: 295px;
+  bottom: 175px;
+  right: -50px;
+  z-index: 70;
+}
+
+.cloud1 {
+  position: absolute;
+  width: calc($sm * 2);
+  height: 675px;
   bottom: 125px;
-  width: $sm;
-  height: 375px;
+  right: -275px;
+  z-index: 60;
+}
+
+.birds {
+  position: absolute;
+  width: 225px;
+  height: 125px;
+  bottom: 415px;
   right: 0;
-  z-index: 3;
-  filter: brightness(0.3) saturate(0.5) hue-rotate(180deg);
+  z-index: 50;
 }
 
-.forest {
+.cloud2 {
   position: absolute;
-  height: 315px;
-  width: $sm;
-  bottom: 115px;
-  z-index: 4;
-  filter: brightness(0.45) saturate(0.5) blur(0px)
-}
-
-.backGrass {
-  position: absolute;
-  width: $sm;
-  height: 150px;
-  bottom: 50px;
-  left: -100px;
-  z-index: 5;
-  filter: brightness(0.4) saturate(0.5);
-}
-
-.frontGrass {
-  position: absolute;
-  bottom: -50px;
-  right: 0;
-  width: $sm;
-  height: 250px;
-  z-index: 6;
-  filter: brightness(0.45) saturate(0.5);
-
-  @include respond-to($sm) {
-    width: $md;
-    height: 300px;
-  }
+  width: 325px;
+  height: 225px;
+  bottom: 450px;
+  right: -100px;
+  z-index: 40;
 }

@@ -13,6 +13,10 @@ const HomeScreen: React.FC = () => {
 
   return (
       <div ref={screenRef} className={styles.body}>
+        <div className={styles.bottomBar} />
+        {/* <div className={styles.title}>Hi, I&apos;m</div>
+        <div className={styles.title}>Angel Angelov</div>
+        <div className={styles.title}>Full-Stack Developer</div> */}
         {imageData.map((data) => (
           <ParallaxImage
             key={data.alt}
@@ -22,9 +26,6 @@ const HomeScreen: React.FC = () => {
             scrollProgress={scrollYProgress}
             start={data.start}
             distance={data.distance}
-            x={data.x}
-            rotate={data.rotate}
-            flip={data.flip}
           />
         ))}
       </div>
