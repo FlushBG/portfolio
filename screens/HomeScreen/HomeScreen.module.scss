@@ -1,0 +1,185 @@
+@import 'styles/variables';
+
+@mixin home-image {
+  position: absolute;
+}
+
+.body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: radial-gradient(circle, rgba(234,249,145,1) 0%, rgba(158,241,162,1) 100%);
+  position: relative;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.text {
+  z-index: 95;
+  background: rgba($background-color, 0.7);
+  padding: 25px;
+}
+
+.intro legend, .title, .subtitle {
+  color: white;
+  filter: drop-shadow(0 0 1px black);
+  text-align: center;
+}
+
+.intro {
+  border-top: 2px solid white;
+  & legend {
+    font-family: 'Montserrat';
+    font-size: 1.75rem;
+    padding: 0 12px;
+  }
+}
+
+.title {
+  font-family: 'Bebas Neue';
+  font-size: 3rem;
+  line-height: 3rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-family: 'Montserrat';
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase
+}
+
+// .title,
+// .subtitle {
+//   color: white;
+//   filter: drop-shadow(0 0 2px black);
+//   text-transform: uppercase;
+//   text-align: center;
+// }
+
+// .title {
+//   font-family: 'Norwester';
+//   font-size: 2rem;
+//   line-height: 2.5rem;
+//   letter-spacing: 5px;
+// }
+
+// .subtitle {
+//   font-size: 1.25rem;
+//   font-family: 'Kollektif';
+//   letter-spacing: 5px;
+//   font-weight: bold;
+// }
+
+.bottomBar {
+  position: absolute;
+  width: 100vw;
+  height: 125px;
+  background: linear-gradient(180deg, rgba(30,56,106,0) 0%, rgba(0,26,28,1) 50%);
+  bottom: 0;
+  z-index: 150;
+}
+
+.forest1 {
+  @include home-image();
+  width: calc($sm * 2);
+  height: 550px;
+  bottom: -150px;
+  right: -500px;
+  z-index: 140;
+}
+
+.mountain1 {
+  @include home-image();
+  width: $sm;
+  height: 225px;
+  bottom: -5px;
+  right: 0;
+  z-index: 130;
+}
+
+.forest2 {
+  @include home-image();
+  width: calc($sm + 50px);
+  height: 300px;
+  bottom: 25px;
+  right: -100px;
+  z-index: 120;
+}
+
+.mountain2 {
+  @include home-image();
+  width: calc($sm + 200px);
+  height: 325px;
+  bottom: 0;
+  right: -120px;
+  z-index: 110;
+}
+
+.forest3 {
+  @include home-image();
+  width: calc($sm + 250px);
+  height: 375px;
+  bottom: 55px;
+  right: -190px;
+  z-index: 100;
+}
+
+.mountain3 {
+  @include home-image();
+  width: calc($sm + 150px);
+  height: 385px;
+  bottom: 100px;
+  right: -150px;
+  z-index: 90;
+}
+
+.mountain4 {
+  @include home-image();
+  width: $sm;
+  height: 295px;
+  bottom: 175px;
+  right: -225px;
+  z-index: 80;
+}
+
+.mountain5 {
+  @include home-image();
+  width: calc($sm + 50px);
+  height: 295px;
+  bottom: 175px;
+  right: -50px;
+  z-index: 70;
+}
+
+.cloud1 {
+  @include home-image();
+  width: calc($sm * 2);
+  height: 675px;
+  bottom: 125px;
+  right: -275px;
+  z-index: 60;
+}
+
+.birds {
+  @include home-image();
+  width: 225px;
+  height: 125px;
+  bottom: 415px;
+  right: 0;
+  z-index: 50;
+}
+
+.cloud2 {
+  @include home-image();
+  width: 325px;
+  height: 225px;
+  bottom: 450px;
+  right: -100px;
+  z-index: 40;
+}

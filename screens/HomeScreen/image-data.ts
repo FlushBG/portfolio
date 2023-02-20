@@ -1,0 +1,81 @@
+import { ParallaxImageProps } from '../../components/ParallaxImage/ParallaxImage';
+
+export const imageData: Omit<ParallaxImageProps, 'scrollProgress'>[] = [
+   {
+      className: 'forest1',
+      src: '/svg/home/forest-front.svg',
+      alt: 'Forest 1',
+      start: 0,
+      distance: 0,
+   },
+   {
+      className: 'mountain1',
+      src: '/svg/home/mountain1.svg',
+      alt: 'Mountain 1',
+      start: 0,
+      distance: 50,
+   },
+   {
+      className: 'forest2',
+      src: '/svg/home/forest-mid-1.svg',
+      alt: 'Forest 2',
+      start: 0,
+      distance: 100,
+   },
+   {
+      className: 'mountain2',
+      src: '/svg/home/mountain2.svg',
+      alt: 'Mountain 2',
+      start: 0,
+      distance: 200,
+   },
+   {
+      className: 'forest3',
+      src: '/svg/home/forest-mid-2.svg',
+      alt: 'Forest 3',
+      start: 0,
+      distance: 200,
+   },
+   {
+      className: 'mountain3',
+      src: '/svg/home/mountain3.svg',
+      alt: 'Mountain 3',
+      start: 0,
+      distance: 350,
+   },
+   {
+      className: 'mountain4',
+      src: '/svg/home/mountain4.svg',
+      alt: 'Mountain 4',
+      start: 0,
+      distance: 400,
+   },
+   {
+      className: 'mountain5',
+      src: '/svg/home/mountain5.svg',
+      alt: 'Mountain 5',
+      start: 0,
+      distance: 500,
+   },
+   {
+      className: 'cloud1',
+      src: '/svg/home/cloud1.svg',
+      alt: 'Cloud 1',
+      start: 0,
+      distance: 550,
+   },
+   {
+      className: 'birds',
+      src: '/svg/home/birds.svg',
+      alt: 'Birds',
+      start: 0,
+      distance: 650,
+   },
+   {
+      className: 'cloud2',
+      src: '/svg/home/cloud2.svg',
+      alt: 'Cloud 2',
+      start: 0,
+      distance: 600,
+   },
+]

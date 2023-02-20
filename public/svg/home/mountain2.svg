@@ -1,0 +1,47 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 476.12 227.33"
+>
+  <defs>
+    <style>
+      .cls-1 {
+        isolation: isolate;
+      }
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+      .cls-3 {
+        fill: #201352;
+        mix-blend-mode: overlay;
+        opacity: 0.08;
+      }
+    </style>
+    <linearGradient
+      id="linear-gradient"
+      x1="238.06"
+      y1="326.67"
+      x2="238.06"
+      y2="98.11"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stop-color="#abcdac" />
+      <stop offset="0.66" stop-color="#62958e" />
+      <stop offset="1" stop-color="#3a767d" />
+    </linearGradient>
+  </defs>
+  <g class="cls-1">
+    <g id="Layer_2" data-name="Layer 2">
+      <g id="OBJECTS">
+        <path
+          class="cls-2"
+          d="M476.12,110.67,370.57,98.17l-81.07-19-26.5-26-21.67-8.5L210,15.33,173.33,0H146S98.32,21.5,85.33,23.33,49.71,35.67,49.71,35.67L0,53.17,20.33,84V227.33H457.46Z"
+        />
+        <polygon
+          class="cls-3"
+          points="231 100.17 210 108.67 130 157.67 130 227.33 457.46 227.33 476.12 110.67 370.57 98.17 289.5 79.17 263 53.17 246.5 69.33 231 100.17"
+        />
+      </g>
+    </g>
+  </g>
+</svg>
