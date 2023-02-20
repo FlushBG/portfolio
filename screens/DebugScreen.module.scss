@@ -2,5 +2,5 @@
 
 .body {
   @include full-screen();
-  background-color: #001a1c;
+  background-color: $background-color;
 }

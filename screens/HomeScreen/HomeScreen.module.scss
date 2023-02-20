@@ -1,5 +1,9 @@
 @import 'styles/variables';
 
+@mixin home-image {
+  position: absolute;
+}
+
 .body {
   height: 100vh;
   width: 100vw;
@@ -12,13 +16,65 @@
   align-items: center;
 }
 
-.title {
-  font-family: 'Straightler Press';
-  font-size: 4.5rem;
+
+.text {
   z-index: 95;
-  filter: drop-shadow(0 0 1px black);
-  color: white;
+  background: rgba($background-color, 0.7);
+  padding: 25px;
 }
+
+.intro legend, .title, .subtitle {
+  color: white;
+  filter: drop-shadow(0 0 1px black);
+  text-align: center;
+}
+
+.intro {
+  border-top: 2px solid white;
+  & legend {
+    font-family: 'Montserrat';
+    font-size: 1.75rem;
+    padding: 0 12px;
+  }
+}
+
+.title {
+  font-family: 'Bebas Neue';
+  font-size: 3rem;
+  line-height: 3rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-family: 'Montserrat';
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase
+}
+
+// .title,
+// .subtitle {
+//   color: white;
+//   filter: drop-shadow(0 0 2px black);
+//   text-transform: uppercase;
+//   text-align: center;
+// }
+
+// .title {
+//   font-family: 'Norwester';
+//   font-size: 2rem;
+//   line-height: 2.5rem;
+//   letter-spacing: 5px;
+// }
+
+// .subtitle {
+//   font-size: 1.25rem;
+//   font-family: 'Kollektif';
+//   letter-spacing: 5px;
+//   font-weight: bold;
+// }
 
 .bottomBar {
   position: absolute;
@@ -30,7 +86,7 @@
 }
 
 .forest1 {
-  position: absolute;
+  @include home-image();
   width: calc($sm * 2);
   height: 550px;
   bottom: -150px;
@@ -39,7 +95,7 @@
 }
 
 .mountain1 {
-  position: absolute;
+  @include home-image();
   width: $sm;
   height: 225px;
   bottom: -5px;
@@ -48,7 +104,7 @@
 }
 
 .forest2 {
-  position: absolute;
+  @include home-image();
   width: calc($sm + 50px);
   height: 300px;
   bottom: 25px;
@@ -57,7 +113,7 @@
 }
 
 .mountain2 {
-  position: absolute;
+  @include home-image();
   width: calc($sm + 200px);
   height: 325px;
   bottom: 0;
@@ -66,7 +122,7 @@
 }
 
 .forest3 {
-  position: absolute;
+  @include home-image();
   width: calc($sm + 250px);
   height: 375px;
   bottom: 55px;
@@ -75,7 +131,7 @@
 }
 
 .mountain3 {
-  position: absolute;
+  @include home-image();
   width: calc($sm + 150px);
   height: 385px;
   bottom: 100px;
@@ -84,7 +140,7 @@
 }
 
 .mountain4 {
-  position: absolute;
+  @include home-image();
   width: $sm;
   height: 295px;
   bottom: 175px;
@@ -93,7 +149,7 @@
 }
 
 .mountain5 {
-  position: absolute;
+  @include home-image();
   width: calc($sm + 50px);
   height: 295px;
   bottom: 175px;
@@ -102,7 +158,7 @@
 }
 
 .cloud1 {
-  position: absolute;
+  @include home-image();
   width: calc($sm * 2);
   height: 675px;
   bottom: 125px;
@@ -111,7 +167,7 @@
 }
 
 .birds {
-  position: absolute;
+  @include home-image();
   width: 225px;
   height: 125px;
   bottom: 415px;
@@ -120,7 +176,7 @@
 }
 
 .cloud2 {
-  position: absolute;
+  @include home-image();
   width: 325px;
   height: 225px;
   bottom: 450px;
