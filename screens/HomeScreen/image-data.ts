@@ -63,6 +63,7 @@ export const imageData: Omit<ParallaxImageProps, 'scrollProgress'>[] = [
       alt: 'Cloud 1',
       start: 0,
       distance: 550,
+      priority: true,
    },
    {
       className: 'birds',
