@@ -1,10 +1,5 @@
-import {
-  motion,
-  MotionValue,
-  useMotionValue,
-  useTransform,
-} from 'framer-motion';
-import React, { useCallback, useMemo } from 'react';
+import React from 'react';
+import { m, MotionValue } from 'framer-motion';
 import useParallax from '../../hooks/useParallax';
 import Image from 'next/image';
 import classes from './ParallaxImage.module.scss';
@@ -16,6 +11,7 @@ export type ParallaxImageProps = {
   scrollProgress: MotionValue<number>;
   start: number;
   distance: number;
+  priority?: boolean;
 };
 
 const ParallaxImage = ({
@@ -24,17 +20,15 @@ const ParallaxImage = ({
   alt,
   scrollProgress,
   start,
-  distance
+  distance,
+  priority = false
 }: ParallaxImageProps) => {
   const y = useParallax(scrollProgress, start, distance);
-  
+ 
   return (
-    <motion.div
-      style={{ y }}
-      className={`${classes.base} ${className}`}
-    >
-      <Image src={src} alt={alt} fill sizes='100vw' />
-    </motion.div>
+    <m.div style={{ y }} className={`${classes.base} ${className}`}>
+      <Image priority={priority} src={src} alt={alt} fill sizes='100vw' />
+    </m.div>
   );
 };
 

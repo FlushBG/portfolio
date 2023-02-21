@@ -1,6 +1,11 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import '../styles/globals.css';
+import type { AppProps } from 'next/app';
+import { domAnimation, LazyMotion } from 'framer-motion';
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <LazyMotion strict features={domAnimation}>
+      <Component {...pageProps} />
+    </LazyMotion>
+  );
 }
