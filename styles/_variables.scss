@@ -1,10 +1,31 @@
-$sm: 575px;
+$sm: 320px;
 $md: 768px;
+$lg: 1440px;
+$xl: 1920px;
 
 $background-color: rgb(0, 26, 28);
+$dark-green: #23484D;
 
-@mixin respond-to($breakpoint) {
-  @media (min-width: $breakpoint) {
+@mixin screen-xl {
+  @media (min-width: $xl) {
+    @content;
+  }
+}
+
+@mixin screen-lg {
+  @media (min-width: $lg) and (max-width: 1919.98px) {
+    @content;
+  }
+}
+
+@mixin screen-md {
+  @media (min-width: $md) and (max-width: 1439.98px) {
+    @content;
+  }
+}
+
+@mixin screen-sm {
+  @media (min-width: $sm) and (max-width: 767.98px) {
     @content;
   }
 }

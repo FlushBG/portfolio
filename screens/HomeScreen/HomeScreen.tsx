@@ -11,18 +11,17 @@ const HomeScreen: React.FC = () => {
     target: screenRef,
     offset: ['end end', 'end start'],
   });
-  const y = useParallax(scrollYProgress, 0, 500);
+  const y = useParallax(scrollYProgress, 0, 600);
 
   return (
     <div ref={screenRef} className={styles.body}>
-      <div className={styles.bottomBar} />
-      <m.div style={{ y }} className={styles.text}>
+      {/* <m.div style={{ y }} className={styles.text}>
         <fieldset className={styles.intro}>
           <legend>Hi, I&apos;m</legend>
         </fieldset>
         <div className={styles.title}>Angel Angelov</div>
         <div className={styles.subtitle}>Full-Stack Dev</div>
-      </m.div>
+      </m.div> */}
       {imageData.map((data) => (
         <ParallaxImage
           key={data.alt}
