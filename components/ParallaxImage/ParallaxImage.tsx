@@ -27,7 +27,7 @@ const ParallaxImage = ({
  
   return (
     <m.div style={{ y }} className={`${classes.base} ${className}`}>
-      <Image priority={priority} src={src} alt={alt} fill sizes='100vw' />
+      <Image priority={priority} src={src} alt={alt} fill loading='lazy' sizes='100vw' />
     </m.div>
   );
 };
