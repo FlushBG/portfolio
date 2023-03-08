@@ -15,7 +15,7 @@
   justify-content: center;
   align-items: center;
   user-select: none;
-  
+
   @include screen-xl {
     max-width: $xl;
     margin: 0 auto;
@@ -70,6 +70,12 @@
   width: 100.2vw;
   z-index: 150;
   bottom: -1px;
+
+  @include screen-sm {
+    width: 450vw;
+    aspect-ratio: 8;
+    //visibility: hidden;
+  }
 }
 
 .layer-2 {
@@ -78,6 +84,12 @@
   width: 100.1vw;
   z-index: 140;
   bottom: -30px;
+
+  @include screen-sm {
+    width: 350vw;
+    aspect-ratio: 4;
+    right: -10px;
+  }
 }
 
 .layer-3 {
@@ -86,6 +98,10 @@
   width: 100.1vw;
   z-index: 130;
   bottom: 0;
+
+  @include screen-sm {
+    display: none;
+  }
 }
 
 .layer-4 {
@@ -94,6 +110,11 @@
   width: 105vw;
   z-index: 120;
   bottom: 0;
+
+  @include screen-sm {
+    width: 450vw;
+    margin-left: 25vw;
+  }
 }
 
 .layer-5 {
@@ -102,6 +123,11 @@
   width: 100vw;
   z-index: 110;
   bottom: 0;
+
+  @include screen-sm {
+    width: 250vw;
+    aspect-ratio: 1.5;
+  }
 }
 
 .layer-6 {
@@ -110,4 +136,8 @@
   width: 100vw;
   z-index: 100;
   bottom: 0;
+  @include screen-sm {
+    width: 250vw;
+    aspect-ratio: 1.15;
+  }
 }

@@ -11,7 +11,7 @@ export const imageData: Omit<VerticalParallaxImageProps, 'scrollProgress'>[] = [
     src: '/svg/home/layer-2.svg',
     alt: 'Layer 2',
     className: 'layer-2',
-    outputRange: ['0%', '30%'],
+    outputRange: ['0%', '35%'],
   },
   {
     src: '/svg/home/layer-3.svg',
