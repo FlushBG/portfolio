@@ -71,10 +71,14 @@
   z-index: 150;
   bottom: -1px;
 
+  @include screen-md {
+    width: 300vw;
+    aspect-ratio: 8;
+  }
+
   @include screen-sm {
     width: 450vw;
     aspect-ratio: 8;
-    //visibility: hidden;
   }
 }
 
@@ -84,6 +88,12 @@
   width: 100.1vw;
   z-index: 140;
   bottom: -30px;
+
+  @include screen-md {
+    width: 250vw;
+    aspect-ratio: 4;
+    right: -10px;
+  }
 
   @include screen-sm {
     width: 350vw;
@@ -99,6 +109,9 @@
   z-index: 130;
   bottom: 0;
 
+  @include screen-md {
+    display: none;
+  }
   @include screen-sm {
     display: none;
   }
@@ -110,6 +123,12 @@
   width: 105vw;
   z-index: 120;
   bottom: 0;
+
+  @include screen-md {
+    width: 275vw;
+    margin-left: 15vw;
+    aspect-ratio: 2.5;
+  }
 
   @include screen-sm {
     width: 450vw;
@@ -124,6 +143,10 @@
   z-index: 110;
   bottom: 0;
 
+  @include screen-md {
+    width: 250vw;
+  }
+
   @include screen-sm {
     width: 250vw;
     aspect-ratio: 1.5;
@@ -136,6 +159,12 @@
   width: 100vw;
   z-index: 100;
   bottom: 0;
+
+  @include screen-md {
+    width: 225vw;
+    aspect-ratio: 1.35;
+  }
+
   @include screen-sm {
     width: 250vw;
     aspect-ratio: 1.15;
