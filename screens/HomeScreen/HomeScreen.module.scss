@@ -1,5 +1,9 @@
 @import 'styles/variables';
 
+.scrolling-element {
+  position: absolute;
+}
+
 .body {
   height: 100svh;
   width: 100svw;
@@ -60,7 +64,7 @@
 }
 
 .layer-1 {
-  position: absolute;
+  @extend .scrolling-element;
   aspect-ratio: 7.2;
   width: 100.2vw;
   z-index: 150;
@@ -68,26 +72,41 @@
 }
 
 .layer-2 {
-  position: absolute;
+  @extend .scrolling-element;
   aspect-ratio: 4;
   width: 100.1vw;
   z-index: 140;
-  bottom: 0;
+  bottom: -30px;
 }
 
 .layer-3 {
-  position: absolute;
-  aspect-ratio: 2.1;
+  @extend .scrolling-element;
+  aspect-ratio: 4.5;
   width: 100.1vw;
   z-index: 130;
   bottom: 0;
 }
 
 .layer-4 {
-  position: absolute;
-  aspect-ratio: 1.5;
-  width: 100vw;
+  @extend .scrolling-element;
+  aspect-ratio: 2.8;
+  width: 105vw;
   z-index: 120;
   bottom: 0;
 }
 
+.layer-5 {
+  @extend .scrolling-element;
+  aspect-ratio: 2.2;
+  width: 100vw;
+  z-index: 110;
+  bottom: 0;
+}
+
+.layer-6 {
+  @extend .scrolling-element;
+  aspect-ratio: 1.55;
+  width: 100vw;
+  z-index: 100;
+  bottom: 0;
+}

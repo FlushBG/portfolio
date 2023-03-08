@@ -6,7 +6,7 @@ import Image from 'next/image';
 export type VerticalParallaxProps = {
   className: string;
   scrollProgress: MotionValue<number>;
-  outputRange: number[];
+  outputRange: string[];
   children: React.ReactNode;
 };
 
