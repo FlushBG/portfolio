@@ -11,7 +11,7 @@ const HomeScreen: React.FC = () => {
     target: screenRef,
     offset: ['end end', 'end start'],
   });
-  const y = useParallax(scrollYProgress, [0, 600]);
+  const y = useParallax(scrollYProgress, ['0%', '50%']);
 
   return (
     <div ref={screenRef} className={classes.body}>
