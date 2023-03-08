@@ -1,12 +1,7 @@
 import { MotionValue, useTransform } from 'framer-motion';
 
-
-const useParallax = (
-  value: MotionValue<number>,
-  start: number,
-  distance: number
-) => {
-  return useTransform(value, [0, 1], [start, distance]);
+const useParallax = (value: MotionValue<number>, outputRange: string[]) => {
+  return useTransform<number, string>(value, [0, 1], outputRange);
 };
 
 export default useParallax;

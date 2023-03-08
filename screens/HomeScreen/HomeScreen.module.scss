@@ -1,27 +1,34 @@
 @import 'styles/variables';
 
-@mixin home-image {
+.scrolling-element {
   position: absolute;
 }
 
 .body {
-  height: 100vh;
-  width: 100vw;
+  height: 100svh;
+  width: 100svw;
   overflow: hidden;
-  background: radial-gradient(circle, rgba(234,249,145,1) 0%, rgba(158,241,162,1) 100%);
+  background: linear-gradient(0deg, rgba(234,249,145,1) 45%, rgba(158,241,162,1) 100%);
   position: relative;
   z-index: 0;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
+  user-select: none;
+
+  @include screen-xl {
+    max-width: $xl;
+    margin: 0 auto;
+  }
 }
 
-
 .text {
-  z-index: 95;
-  background: rgba($background-color, 0.7);
-  padding: 25px;
-  margin-bottom: 22rem;
+  z-index: 135;
+  background: rgba($background-color, 0.75);
+  padding: 20px;
+  margin-bottom: 275px;
+  width: 100vw;
+  user-select: none;
 }
 
 .intro legend, .title, .subtitle {
@@ -35,152 +42,131 @@
   & legend {
     font-family: 'Montserrat';
     font-size: 1.75rem;
+    line-height: 2rem;
+    margin-bottom: 0.5rem;
     padding: 0 12px;
   }
 }
 
 .title {
   font-family: 'Bebas Neue';
-  font-size: 3rem;
-  line-height: 3rem;
-  letter-spacing: 1px;
+  font-size: 3.75rem;
+  line-height: 3.75rem;
+  letter-spacing: 5px;
   text-transform: uppercase;
 }
 
 .subtitle {
   font-family: 'Montserrat';
-  font-size: 1.2rem;
+  font-size: 1.9rem;
+  letter-spacing: 6px;
   font-weight: bold;
-  letter-spacing: 5px;
-  text-transform: uppercase
+  text-transform: uppercase;
 }
 
-// .title,
-// .subtitle {
-//   color: white;
-//   filter: drop-shadow(0 0 2px black);
-//   text-transform: uppercase;
-//   text-align: center;
-// }
-
-// .title {
-//   font-family: 'Norwester';
-//   font-size: 2rem;
-//   line-height: 2.5rem;
-//   letter-spacing: 5px;
-// }
-
-// .subtitle {
-//   font-size: 1.25rem;
-//   font-family: 'Kollektif';
-//   letter-spacing: 5px;
-//   font-weight: bold;
-// }
-
-.bottomBar {
-  position: absolute;
-  width: 100vw;
-  height: 125px;
-  background: linear-gradient(180deg, rgba(30,56,106,0) 0%, rgba(0,26,28,1) 50%);
-  bottom: 0;
+.layer-1 {
+  @extend .scrolling-element;
+  aspect-ratio: 7.2;
+  width: 100.2vw;
   z-index: 150;
+  bottom: -1px;
+
+  @include screen-md {
+    width: 300vw;
+    aspect-ratio: 8;
+  }
+
+  @include screen-sm {
+    width: 450vw;
+    aspect-ratio: 8;
+  }
 }
 
-.forest1 {
-  @include home-image();
-  width: calc($sm * 2);
-  height: 550px;
-  bottom: -150px;
-  right: -500px;
+.layer-2 {
+  @extend .scrolling-element;
+  aspect-ratio: 4;
+  width: 100.1vw;
   z-index: 140;
+  bottom: -30px;
+
+  @include screen-md {
+    width: 250vw;
+    aspect-ratio: 4;
+    right: -10px;
+  }
+
+  @include screen-sm {
+    width: 350vw;
+    aspect-ratio: 4;
+    right: -10px;
+  }
 }
 
-.mountain1 {
-  @include home-image();
-  width: $sm;
-  height: 225px;
-  bottom: -5px;
-  right: 0;
+.layer-3 {
+  @extend .scrolling-element;
+  aspect-ratio: 4.5;
+  width: 100.1vw;
   z-index: 130;
-}
-
-.forest2 {
-  @include home-image();
-  width: calc($sm + 50px);
-  height: 300px;
-  bottom: 25px;
-  right: -100px;
-  z-index: 120;
-}
-
-.mountain2 {
-  @include home-image();
-  width: calc($sm + 200px);
-  height: 325px;
   bottom: 0;
-  right: -120px;
+
+  @include screen-md {
+    display: none;
+  }
+  @include screen-sm {
+    display: none;
+  }
+}
+
+.layer-4 {
+  @extend .scrolling-element;
+  aspect-ratio: 2.8;
+  width: 105vw;
+  z-index: 120;
+  bottom: 0;
+
+  @include screen-md {
+    width: 275vw;
+    margin-left: 15vw;
+    aspect-ratio: 2.5;
+  }
+
+  @include screen-sm {
+    width: 450vw;
+    margin-left: 25vw;
+  }
+}
+
+.layer-5 {
+  @extend .scrolling-element;
+  aspect-ratio: 2.2;
+  width: 100vw;
   z-index: 110;
+  bottom: 0;
+
+  @include screen-md {
+    width: 250vw;
+  }
+
+  @include screen-sm {
+    width: 250vw;
+    aspect-ratio: 1.5;
+  }
 }
 
-.forest3 {
-  @include home-image();
-  width: calc($sm + 250px);
-  height: 375px;
-  bottom: 55px;
-  right: -190px;
+.layer-6 {
+  @extend .scrolling-element;
+  aspect-ratio: 1.55;
+  width: 100vw;
   z-index: 100;
-}
+  bottom: 0;
 
-.mountain3 {
-  @include home-image();
-  width: calc($sm + 150px);
-  height: 385px;
-  bottom: 100px;
-  right: -150px;
-  z-index: 90;
-}
+  @include screen-md {
+    width: 225vw;
+    aspect-ratio: 1.35;
+  }
 
-.mountain4 {
-  @include home-image();
-  width: $sm;
-  height: 295px;
-  bottom: 175px;
-  right: -225px;
-  z-index: 80;
-}
-
-.mountain5 {
-  @include home-image();
-  width: calc($sm + 50px);
-  height: 295px;
-  bottom: 175px;
-  right: -50px;
-  z-index: 70;
-}
-
-.cloud1 {
-  @include home-image();
-  width: calc($sm * 2);
-  height: 675px;
-  bottom: 125px;
-  right: -275px;
-  z-index: 60;
-}
-
-.birds {
-  @include home-image();
-  width: 225px;
-  height: 125px;
-  bottom: 415px;
-  right: 0;
-  z-index: 50;
-}
-
-.cloud2 {
-  @include home-image();
-  width: 325px;
-  height: 225px;
-  bottom: 450px;
-  right: -100px;
-  z-index: 40;
+  @include screen-sm {
+    width: 250vw;
+    aspect-ratio: 1.15;
+  }
 }
