@@ -1,32 +1,29 @@
-import { ParallaxImageProps } from '../../components/ParallaxImage/ParallaxImage';
+import { VerticalParallaxImageProps } from '../../components/VerticalParallax/VerticalParallax';
 
-export const imageData: Omit<ParallaxImageProps, 'scrollProgress'>[] = [
-   {
-      className: 'layer-1',
-      src: '/svg/home/layer-1.svg',
-      alt: 'Layer 1',
-      start: 0,
-      distance: 0,
-   },
-   {
-      className: 'layer-2',
-      src: '/svg/home/layer-2.svg',
-      alt: 'Layer 2',
-      start: 0,
-      distance: 100,
-   },
-   {
-      className: 'layer-3',
-      src: '/svg/home/layer-3.svg',
-      alt: 'Layer 3',
-      start: 0,
-      distance: 400,
-   },
-   {
-      className: 'layer-4',
-      src: '/svg/home/layer-4.svg',
-      alt: 'Layer 4',
-      start: 0,
-      distance: 500,
-   },
-]
+export const imageData: Omit<VerticalParallaxImageProps, 'scrollProgress'>[] = [
+  {
+    src: '/svg/home/layer-1.svg',
+    alt: 'Layer 1',
+    className: 'layer-1',
+    outputRange: [0, 0],
+  },
+  {
+    src: '/svg/home/layer-2.svg',
+    alt: 'Layer 2',
+    className: 'layer-2',
+    outputRange: [0, 200],
+  },
+  {
+    src: '/svg/home/layer-3.svg',
+    alt: 'Layer 3',
+    className: 'layer-3',
+    outputRange: [0, 400],
+    priority: true,
+  },
+  {
+    src: '/svg/home/layer-4.svg',
+    alt: 'Layer 4',
+    className: 'layer-4',
+    outputRange: [0, 500],
+  },
+];

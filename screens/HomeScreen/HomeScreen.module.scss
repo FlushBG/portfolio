@@ -1,12 +1,8 @@
 @import 'styles/variables';
 
-@mixin home-image {
-  position: absolute;
-}
-
 .body {
-  height: 100vh;
-  width: 100vw;
+  height: 100svh;
+  width: 100svw;
   overflow: hidden;
   background: linear-gradient(0deg, rgba(234,249,145,1) 45%, rgba(158,241,162,1) 100%);
   position: relative;
@@ -64,6 +60,7 @@
 }
 
 .layer-1 {
+  position: absolute;
   aspect-ratio: 7.2;
   width: 100.2vw;
   z-index: 150;
@@ -71,6 +68,7 @@
 }
 
 .layer-2 {
+  position: absolute;
   aspect-ratio: 4;
   width: 100.1vw;
   z-index: 140;
@@ -78,6 +76,7 @@
 }
 
 .layer-3 {
+  position: absolute;
   aspect-ratio: 2.1;
   width: 100.1vw;
   z-index: 130;
@@ -85,6 +84,7 @@
 }
 
 .layer-4 {
+  position: absolute;
   aspect-ratio: 1.5;
   width: 100vw;
   z-index: 120;
