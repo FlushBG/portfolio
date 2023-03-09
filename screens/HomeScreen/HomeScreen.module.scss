@@ -22,6 +22,12 @@
   }
 }
 
+.greeting {
+  font-size: 10rem;
+  color: $background-color;
+  z-index: 135;
+}
+
 .text {
   z-index: 135;
   background: rgba($background-color, 0.75);

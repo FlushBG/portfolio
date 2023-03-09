@@ -1,0 +1,36 @@
+@import 'styles/variables';
+
+.body {
+  @include full-screen();
+  padding: 2rem;
+  background-color: $background-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.heading {
+  font-size: 8rem;
+  line-height: 6.5rem;
+  user-select: none;
+  color: white;
+}
+
+.subheading {
+  color: white;
+  font-size: 7rem;
+  line-height: 6rem;
+  color: rgba(234, 249, 145, 1);
+}
+
+.paragraph {
+  color: #dcdcdc;
+  max-width: 50vw;
+  padding: 2rem 0;
+  font-size: 1.25rem;
+  text-align: justify;
+
+  &:last-child {
+    padding: 0 5rem;
+  }
+}
