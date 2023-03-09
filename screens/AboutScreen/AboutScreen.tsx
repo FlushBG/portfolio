@@ -17,7 +17,7 @@ const AboutScreen = () => {
   return (
     <section className={classes.body}>
       <m.h1
-        initial={{ x: '95vw' }}
+        initial={{ x: '90vw' }}
         whileInView={{ x: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
@@ -28,16 +28,16 @@ const AboutScreen = () => {
       <m.h2
         initial={{ x: '-85vw' }}
         whileInView={{ x: 0 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 1, delay: 0.25 }}
         viewport={{ once: true }}
         className={cn(classes.subheading)}
       >
         I turn ideas into digital solutions.
       </m.h2>
       <m.p
-        initial={{ x: '95w' }}
+        initial={{ x: '90vw' }}
         whileInView={{ x: 0 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 1, delay: 0.5 }}
         viewport={{ once: true }}
         className={cn(classes.paragraph, raleway.className)}
       >

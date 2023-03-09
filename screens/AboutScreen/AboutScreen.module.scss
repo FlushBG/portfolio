@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
 
   @include screen-sm {
    padding: 1.5rem;
