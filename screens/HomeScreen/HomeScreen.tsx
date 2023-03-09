@@ -28,7 +28,7 @@ const HomeScreen: React.FC = () => {
         onViewportLeave={() => setShowGreeting(false)}
         className={cn(classes.greeting, moonliteSolid.className)}
       >
-        Hi.
+        hello
       </m.h1>}
       {imageData.map((data) => (
         <VerticalParallaxImage

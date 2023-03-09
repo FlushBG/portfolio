@@ -17,25 +17,25 @@ const AboutScreen = () => {
   return (
     <section className={classes.body}>
       <m.h1
-        initial={{ x: '98vh' }}
+        initial={{ x: '95vw' }}
         whileInView={{ x: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className={cn(classes.heading, moonliteSolid.className)}
+        className={cn(classes.heading)}
       >
         My name is Angel Angelov.
       </m.h1>
       <m.h2
-        initial={{ x: '-98vh' }}
+        initial={{ x: '-85vw' }}
         whileInView={{ x: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className={cn(classes.subheading, moonliteOutline.className)}
+        className={cn(classes.subheading)}
       >
-        I transform ideas into digital solutions.
+        I turn ideas into digital solutions.
       </m.h2>
       <m.p
-        initial={{ x: '98vh' }}
+        initial={{ x: '95w' }}
         whileInView={{ x: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
@@ -51,7 +51,6 @@ const AboutScreen = () => {
         Let&apos;s connect and chat about how we can work together on your next
         project!
       </m.p>
-      <p className={classes.paragraph}></p>
     </section>
   );
 };
