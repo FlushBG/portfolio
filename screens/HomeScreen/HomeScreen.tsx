@@ -26,7 +26,7 @@ const HomeScreen: React.FC = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
         onViewportLeave={() => setShowGreeting(false)}
-        className={cn(classes.greeting, moonliteSolid.className)}
+        className={cn(classes.greeting)}
       >
         hello
       </m.h1>}
