@@ -1,0 +1,56 @@
+@import 'styles/variables';
+
+.body {
+  height: 100vh;
+  padding: 3.25rem;
+  background-color: $background-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include screen-sm {
+   padding: 1.5rem;
+  
+  }
+}
+
+.heading, .subheading {
+   user-select: none;
+   font-family: Bebas Neue;
+}
+
+.heading {
+  font-size: 7rem;
+  line-height: 6rem;
+  color: white;
+
+  @include screen-sm {
+   font-size: 5.5rem;
+   line-height: 4.25rem;
+   margin-bottom: 2rem;
+  }
+}
+
+.subheading {
+  font-size: 5rem;
+  line-height: 4.5rem;
+  color: #eaf991;
+
+  @include screen-sm {
+   font-size: 4.75rem;
+   line-height: 3.75rem;
+  }
+}
+
+.paragraph {
+  color: #dcdcdc;
+  max-width: 50vw;
+  padding: 2rem 0;
+  font-size: 1.25rem;
+
+  @include screen-sm {
+   max-width: 100vw;
+   font-size: 1.25rem;
+   line-height: 1.5rem;
+  }
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 import { m, MotionValue } from 'framer-motion';
 import useParallax from '../../hooks/useParallax';
 import Image from 'next/image';
@@ -7,7 +7,6 @@ export type VerticalParallaxProps = {
   className: string;
   scrollProgress: MotionValue<number>;
   outputRange: string[];
-  children: React.ReactNode;
 };
 
 export type VerticalParallaxImageProps = Omit<
@@ -24,7 +23,7 @@ export const VerticalParallax = ({
   outputRange,
   scrollProgress,
   children,
-}: VerticalParallaxProps) => {
+}: PropsWithChildren<VerticalParallaxProps>) => {
   const y = useParallax(scrollProgress, outputRange);
 
   return (

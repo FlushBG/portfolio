@@ -1,27 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { m, useScroll } from 'framer-motion';
 import { imageData } from './image-data';
 import useParallax from '../../hooks/useParallax';
 import { VerticalParallaxImage } from '../../components/VerticalParallax';
 import classes from './HomeScreen.module.scss';
+import localFont from 'next/font/local';
+import { cn } from '../../utils/classname-utils';
+
+const moonliteSolid = localFont({
+  src: '../../public/fonts/Moonlite Solid.ttf',
+});
 
 const HomeScreen: React.FC = () => {
+  const [showGreeting, setShowGreeting] = useState<boolean>(true);
   const screenRef = React.useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: screenRef,
     offset: ['end end', 'end start'],
   });
-  const y = useParallax(scrollYProgress, ['0%', '50%']);
 
   return (
-    <div ref={screenRef} className={classes.body}>
-      {/* <m.div style={{ y }} className={styles.text}>
-        <fieldset className={styles.intro}>
-          <legend>Hi, I&apos;m</legend>
-        </fieldset>
-        <div className={styles.title}>Angel Angelov</div>
-        <div className={styles.subtitle}>Full-Stack Dev</div>
-      </m.div> */}
+    <section ref={screenRef} className={classes.body}>
+      {showGreeting && <m.h1
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        onViewportLeave={() => setShowGreeting(false)}
+        className={cn(classes.greeting, moonliteSolid.className)}
+      >
+        hello
+      </m.h1>}
       {imageData.map((data) => (
         <VerticalParallaxImage
           key={data.alt}
@@ -33,7 +41,7 @@ const HomeScreen: React.FC = () => {
           className={classes[data.className]}
         />
       ))}
-    </div>
+    </section>
   );
 };
 
