@@ -1,56 +1,93 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import localFont from 'next/font/local';
 import { Raleway } from 'next/font/google';
 import classes from './AboutScreen.module.scss';
 import { cn } from '../../utils/classname-utils';
 import { m } from 'framer-motion';
+import { isMobile } from '../../utils/screen-utils';
 
 const raleway = Raleway({ subsets: ['latin'] });
-const moonliteSolid = localFont({
-  src: '../../public/fonts/Moonlite Solid.ttf',
+const bebas = localFont({
+  src: '../../public/fonts/BebasNeue Regular.otf',
 });
-const moonliteOutline = localFont({
-  src: '../../public/fonts/Moonlite Outline.ttf',
+const bebasBook = localFont({
+  src: '../../public/fonts/BebasNeue Book.otf',
 });
 
 const AboutScreen = () => {
+  useEffect(() => {
+    if (isMobile()) {
+      console.log('MOBILE');
+    }
+  }, []);
+  const goToContactForm = (): void => {
+    const contactForm = document.getElementById('contact');
+    contactForm?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section className={classes.body}>
       <m.h1
-        initial={{ x: '90vw' }}
+        initial={{ x: isMobile() ? '93vw' : '86vw' }}
         whileInView={{ x: 0 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.75, type: 'spring' }}
         viewport={{ once: true }}
-        className={cn(classes.heading)}
+        className={cn(classes.heading, bebas.className)}
       >
         My name is Angel Angelov.
       </m.h1>
       <m.h2
-        initial={{ x: '-85vw' }}
+        initial={{ x: isMobile() ? '-75vw' : '-85vw' }}
         whileInView={{ x: 0 }}
-        transition={{ duration: 1, delay: 0.25 }}
+        transition={{
+          duration: 0.75,
+          delay: isMobile() ? 0 : 0.25,
+          type: 'spring',
+        }}
         viewport={{ once: true }}
-        className={cn(classes.subheading)}
+        className={cn(classes.subheading, bebasBook.className)}
       >
         I turn ideas into digital solutions.
       </m.h2>
       <m.p
-        initial={{ x: '90vw' }}
+        initial={{ x: isMobile() ? '93vw' : '86vw' }}
         whileInView={{ x: 0 }}
-        transition={{ duration: 1, delay: 0.5 }}
+        transition={{
+          duration: 0.75,
+          delay: isMobile() ? 0 : 0.25,
+          type: 'spring',
+        }}
         viewport={{ once: true }}
         className={cn(classes.paragraph, raleway.className)}
       >
-        I&apos;m based in Sofia, Bulgaria and have almost 5 years of experience
-        building web apps and services using Node.js, Next.js, and Typescript.
-        I&apos;ve worked with clients in automotive, gambling, and insurance
-        industries and always deliver high-quality solutions that exceed
-        expectations. <br />
+        I&apos;m a frontend developer with a knack for making things happen.
+        Whether you need a killer website, a mobile app that&apos;ll make your
+        competitors weep, or some other kind of digital magic, I&apos;m your
+        guy.
         <br />
-        Ready to take a look at my portfolio and see some of my past work?
-        Let&apos;s connect and chat about how we can work together on your next
-        project!
+        <br />
+        My weapons of choice are <b>Next.js, React.js and Typescript</b>, but I
+        can also handle backend (Node.js) along with infrastructure tools
+        (Docker, Kubernetes, AWS) easily. Don&apos;t worry if you don&apos;t
+        know what all that means - just trust me, I&apos;m good at what I do.
       </m.p>
+      <m.div
+        initial={{ x: isMobile() ? '-93vw' : '-85vw' }}
+        whileInView={{ x: 0 }}
+        transition={{
+          duration: 0.75,
+          delay: isMobile() ? 0 : 0.5,
+          type: 'spring',
+        }}
+        viewport={{ once: true }}
+      >
+        <button
+          className={cn(classes.action, bebasBook.className)}
+          onClick={goToContactForm}
+        >
+          Let&apos;s get in touch!
+        </button>
+      </m.div>
     </section>
   );
 };

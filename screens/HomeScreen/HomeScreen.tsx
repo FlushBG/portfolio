@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { m, useScroll } from 'framer-motion';
 import { imageData } from './image-data';
-import useParallax from '../../hooks/useParallax';
 import { VerticalParallaxImage } from '../../components/VerticalParallax';
 import classes from './HomeScreen.module.scss';
 import localFont from 'next/font/local';
 import { cn } from '../../utils/classname-utils';
 
-const moonliteSolid = localFont({
-  src: '../../public/fonts/Moonlite Solid.ttf',
+const bebas = localFont({
+  src: '../../public/fonts/BebasNeue Regular.otf',
 });
 
 const HomeScreen: React.FC = () => {
@@ -21,15 +20,17 @@ const HomeScreen: React.FC = () => {
 
   return (
     <section ref={screenRef} className={classes.body}>
-      {showGreeting && <m.h1
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        onViewportLeave={() => setShowGreeting(false)}
-        className={cn(classes.greeting)}
-      >
-        hello
-      </m.h1>}
+      {showGreeting && (
+        <m.h1
+          initial={{ opacity: 0, y: '3rem' }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          onViewportLeave={() => setShowGreeting(false)}
+          className={cn(classes.greeting, bebas.className)}
+        >
+          hello
+        </m.h1>
+      )}
       {imageData.map((data) => (
         <VerticalParallaxImage
           key={data.alt}
