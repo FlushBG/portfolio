@@ -34,7 +34,7 @@ const AboutScreen = () => {
         viewport={{ once: true }}
         className={cn(classes.heading, bebas.className)}
       >
-        My name is Angel Angelov.
+        <span>My name is</span> Angel Angelov.
       </m.h1>
       <m.h2
         initial={{ x: isMobile() ? '-75vw' : '-85vw' }}
@@ -47,7 +47,7 @@ const AboutScreen = () => {
         viewport={{ once: true }}
         className={cn(classes.subheading, bebasBook.className)}
       >
-        I turn ideas into digital solutions.
+        <span>I turn ideas into</span> digital solutions.
       </m.h2>
       <m.p
         initial={{ x: isMobile() ? '93vw' : '86vw' }}
