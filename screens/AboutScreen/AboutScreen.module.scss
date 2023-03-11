@@ -1,23 +1,13 @@
 @import 'styles/variables';
 
 .body {
-  padding: 3.25rem;
-  background-color: $background-color;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
-
-  @include screen-md {
-    padding: 2rem;
-  }
-  @include screen-sm {
-    padding: 1.5rem;
-  }
+  @include screen();
 }
 
 .heading,
-.subheading {
+.subheading,
+.paragraph,
+.action {
   user-select: none;
 }
 
@@ -28,14 +18,14 @@
   color: white;
   
   @include screen-md {
-    margin-top: 10vh;
+    // margin-top: 15vh;
     font-size: 5.5rem;
     line-height: 4.5rem;
     margin-bottom: 0.5rem;
   }
 
   @include screen-sm {
-    margin-top: 10vh;
+    // margin-top: 15vh;
     font-size: 3.25rem;
     line-height: 2.75rem;
     margin-bottom: 0.5rem;
@@ -64,7 +54,6 @@
   padding-top: 4rem;
   font-size: 1.2rem;
   line-height: 1.5rem;
-  user-select: none;
 
   @include screen-md {
     max-width: 65vw;
