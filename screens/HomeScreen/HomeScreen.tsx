@@ -10,6 +10,9 @@ const bebas = localFont({
   src: '../../public/fonts/BebasNeue Regular.otf',
 });
 
+// TODO: Add a context setting for enabling or disabling parallax FX.
+// Default for mobile will be false, for other screens: true.
+// Add it to an app context
 const HomeScreen: React.FC = () => {
   const [showGreeting, setShowGreeting] = useState<boolean>(true);
   const screenRef = React.useRef<HTMLDivElement>(null);
