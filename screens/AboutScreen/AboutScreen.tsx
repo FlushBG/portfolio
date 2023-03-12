@@ -15,11 +15,6 @@ const bebasBook = localFont({
 });
 
 const AboutScreen = () => {
-  useEffect(() => {
-    if (isMobile()) {
-      console.log('MOBILE');
-    }
-  }, []);
   const goToContactForm = (): void => {
     const contactForm = document.getElementById('contact');
     contactForm?.scrollIntoView({ behavior: 'smooth' });
@@ -80,6 +75,7 @@ const AboutScreen = () => {
           type: 'spring',
         }}
         viewport={{ once: true }}
+        className={classes.actionWrapper}
       >
         <button
           className={cn(classes.action, bebasBook.className)}
@@ -88,6 +84,7 @@ const AboutScreen = () => {
           Let&apos;s get in touch!
         </button>
       </m.div>
+      <div className={cn(classes.backgroundText, bebas.className)}>Portfolio</div>
     </section>
   );
 };

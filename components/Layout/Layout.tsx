@@ -2,31 +2,31 @@ import { m } from 'framer-motion';
 import React, { PropsWithChildren } from 'react';
 import { cn } from '../../utils/classname-utils';
 import classes from './Layout.module.scss';
-import { AiFillLinkedin, AiFillGithub, AiOutlineMail } from 'react-icons/ai';
+import { FiLinkedin, FiMail, FiGithub } from 'react-icons/fi';
 
 const Layout = ({ children }: PropsWithChildren) => {
   return (
     <div className={classes.container}>
-      <div>{children}</div>
+      <main>{children}</main>
       <nav className={classes.sidebar}>
         <a
           href='https://github.com/FlushBG'
           target='_blank'
           className={classes.iconLink}
         >
-          <AiFillGithub />
+          <FiGithub />
         </a>
         <a
           href='https://linkedin.com/in/a-angelov'
           target='_blank'
           className={classes.iconLink}
         >
-          <AiFillLinkedin />
+          <FiLinkedin />
         </a>
         <a href='#' className={classes.iconLink}>
-          <AiOutlineMail />
+          <FiMail />
         </a>
-        {/* <div className={classes.separator} /> */}
+        <div className={classes.line} />
       </nav>
     </div>
   );

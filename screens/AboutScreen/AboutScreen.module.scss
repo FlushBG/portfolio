@@ -2,12 +2,14 @@
 
 .body {
   @include screen();
+  position: relative;
 }
 
 .heading,
 .subheading,
 .paragraph,
 .action {
+  z-index: 1;
   user-select: none;
 }
 
@@ -74,13 +76,17 @@
   }
 }
 
+.actionWrapper {
+  z-index: 1;
+}
+
 .action {
   background-color: transparent;
-  color: $theme-yellow;
-  border: 1px solid $theme-yellow;
+  color: $yellow;
+  border: 1px solid $yellow;
   font-size: 1.25rem;
   padding: 1rem 2rem;
-  margin-top: 4rem;
+  margin: 4rem 0;
   width: 15.5rem;
   letter-spacing: 2.5px;
   transition: letter-spacing .3s;
@@ -92,7 +98,23 @@
 
   @include screen-sm {
     font-size: 1.1rem;
-    margin-top: 3.25rem;
+    margin: 3.25rem 0 1rem 0;
     width: 100%;
+  }
+}
+
+.backgroundText {
+  z-index: 0;
+  font-size: 35rem;
+  position: absolute;
+  font-weight: bold;
+  color: lighten($background-color, 1%);
+  top: 3rem;
+  left: -1rem;
+
+  @include screen-sm {
+    transform: rotate(-45deg);
+    font-size: 20rem;
+    left: -15rem; 
   }
 }
