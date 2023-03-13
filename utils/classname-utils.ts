@@ -1,7 +1,7 @@
-export const cn = (...classNames: string[]): string => {
+export const cn = (...classNames: (string | null)[]): string => {
    return classNames.filter((c) => !!c).join(' ');
 }
 
-export const cnif = (className: string, condition: string): string | null => {
+export const cnif = (condition: boolean, className: string): string | null => {
    return !!condition ? className : null;
 }
