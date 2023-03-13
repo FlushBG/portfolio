@@ -4,11 +4,14 @@ import { imageData } from './image-data';
 import { VerticalParallaxImage } from '../../components/VerticalParallax';
 import classes from './HomeScreen.module.scss';
 import localFont from 'next/font/local';
+import { Open_Sans } from 'next/font/google';
 import { cn } from '../../utils/classname-utils';
+import { ScrollIndicator } from '../../components';
 
 const bebas = localFont({
   src: '../../public/fonts/BebasNeue Regular.otf',
 });
+const openSans = Open_Sans({ weight: "300", subsets: ['latin']})
 
 // TODO: Add a context setting for enabling or disabling parallax FX.
 // Default for mobile will be false, for other screens: true.
@@ -26,12 +29,12 @@ const HomeScreen: React.FC = () => {
       {showGreeting && (
         <m.h1
           initial={{ opacity: 0, y: '3rem' }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: '-4rem' }}
           transition={{ duration: 1 }}
           onViewportLeave={() => setShowGreeting(false)}
           className={cn(classes.greeting, bebas.className)}
         >
-          hello
+          Hello
         </m.h1>
       )}
       {imageData.map((data) => (
@@ -45,6 +48,7 @@ const HomeScreen: React.FC = () => {
           className={classes[data.className]}
         />
       ))}
+      <ScrollIndicator />
     </section>
   );
 };

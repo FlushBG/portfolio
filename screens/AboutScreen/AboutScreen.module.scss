@@ -40,7 +40,7 @@
 .subheading {
   font-size: 5.75rem;
   line-height: 4.5rem;
-  color: #eaf991;
+  color: $yellow;
 
   @include screen-md {
     font-size: 4.5rem;
@@ -113,7 +113,7 @@
   left: -1rem;
 
   @include screen-sm {
-    transform: rotate(-40deg);
+    transform: rotate(-35deg);
     font-size: 18rem;
     left: -8rem; 
   }
