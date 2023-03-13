@@ -21,8 +21,9 @@
 
   @include screen-sm {
    width: 100%;
+   padding: 1.25rem 0;
+
    &::before {
-      //width: 1px;
       width: 0;
       border-left: 1px solid white;
       left: 1rem;
