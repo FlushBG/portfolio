@@ -13,9 +13,9 @@ const ScrollIndicator = () => {
         <m.div
           animate={{
             y: ['.25rem', '.75rem', '1rem', '1.25rem'],
-            opacity: [1, 1, 1, 0],
+            opacity: [0, 1, 1, 1],
           }}
-          transition={{ duration: 1.25, ease: 'linear', repeat: Infinity, repeatType: 'reverse' }}
+          transition={{ duration: .75, ease: 'linear', repeat: Infinity, repeatType: 'reverse' }}
           className={classes.indicator}
         />
       </div>
