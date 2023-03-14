@@ -30,6 +30,7 @@ const HomeScreen: React.FC = () => {
         transition={{
           duration: 1.25,
           repeat: 1,
+          ease: 'easeOut',
           repeatType: 'reverse',
           repeatDelay: 3,
         }}
