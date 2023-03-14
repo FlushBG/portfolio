@@ -9,8 +9,17 @@
     border-bottom: 1px solid $yellow;
     background-color: lighten($background-color, 3%);
     padding: 1.5rem;
-    span {
+    .position {
+      font-weight: bold;
+    }
+    .link {
       color: $yellow;
+    }
+    .date {
+      display: none;
+      color: $light-gray;
+      font-size: 0.75rem;
+      text-transform: uppercase;
     }
   }
 
@@ -21,8 +30,22 @@
     color: $light-gray;
     font-size: 1.25rem;
     line-height: 1.75rem;
-    li:not(:first-child) {
-      margin-top: 0.75rem;
+    li {
+      .bullet {
+        margin-top: 0.45rem;
+        margin-right: 1rem;
+        height: 0.9rem;
+        width: 0.9rem;
+        background: url('/icons/bullet15x15.png') no-repeat;
+        float: left;
+      }
+      .content {
+        width: calc(100% - 2rem);
+        display: inline-block;
+      }
+      &:not(:first-child) {
+        margin-top: 0.75rem;
+      }
     }
   }
 
@@ -51,13 +74,13 @@
       width: 0;
       border: 0.75rem solid transparent;
       border-right: 0.75rem solid lighten($background-color, 3%);
-   }
-   @include screen-sm {
-     margin-left: 1.25rem;
-     &::before {
+    }
+    @include screen-sm {
+      margin-left: 1.25rem;
+      &::before {
         border-width: 0.5rem;
-     }
-   }
+      }
+    }
   }
 
   @include screen-sm {
@@ -65,14 +88,27 @@
     h3 {
       font-size: 1.5rem;
       padding: 0.75rem;
-      span {
+      .link {
         display: block;
+      }
+      .date {
+        display: block;
+        margin-top: 0.5rem;
       }
     }
     ul {
       padding: 1rem 0;
-      font-size: 1rem;
-      line-height: 1.5rem;
+      font-size: 0.9rem;
+      line-height: 1.4rem;
+      li {
+        .bullet {
+          width: 0.75rem;
+          height: 0.75rem;
+          margin-top: 0.4rem;
+          margin-right: 0.75rem;
+          background-image: url('/icons/bullet10x10.png');
+        }
+      }
     }
   }
 }

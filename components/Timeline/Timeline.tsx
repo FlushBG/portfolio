@@ -53,7 +53,7 @@ const Timeline = ({ items = [] }: TimelineProps) => {
               className={classes.icon}
             >
               <div>
-                <Image src='/icons/entain.png' alt='Accedia' fill />
+                <Image src='/icons/accedia.ico' alt='Accedia' fill />
               </div>
             </m.div>
             {renderRightSide(item.position)}
