@@ -1,0 +1,62 @@
+@import 'styles/variables';
+
+.timeline {
+  width: 80vw;
+  margin: 0 auto;
+  position: relative;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    border-left: 2px dashed white;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  @include screen-sm {
+   width: 100%;
+   padding: 1.25rem 0;
+
+   &::before {
+      border-left: 1px dashed white;
+      left: 1rem;
+   }
+  }
+}
+
+.item {
+  position: relative;
+  margin-bottom: 5vh;
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 4rem 1fr;
+
+  @include screen-sm {
+   grid-template-columns: 2rem 1fr;
+  }
+}
+
+.icon {
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid white;
+  background-color: $background-color;
+  padding: .5rem;
+
+  div {
+   position: relative;
+   height: 100%;
+  }
+
+  @include screen-sm {
+   width: 2rem;
+   height: 2rem;
+   padding: .25rem;
+   border-width: 1px;
+  }
+}

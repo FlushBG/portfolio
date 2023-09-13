@@ -1,0 +1,113 @@
+@import 'styles/variables';
+
+.card {
+  margin-top: -0.5rem;
+
+  h3 {
+    color: $light-gray;
+    font-size: 2.25rem;
+    border-bottom: 1px solid $yellow;
+    background-color: lighten($background-color, 3%);
+    padding: 1.5rem;
+    .position {
+      font-weight: bold;
+    }
+    .link {
+      color: $yellow;
+    }
+    .date {
+      display: none;
+      color: $light-gray;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    color: $light-gray;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    li {
+      .bullet {
+        margin-top: 0.45rem;
+        margin-right: 1rem;
+        height: 0.9rem;
+        width: 0.9rem;
+        background: url('/icons/bullet.svg') no-repeat;
+        float: left;
+      }
+      .content {
+        width: calc(100% - 2rem);
+        display: inline-block;
+      }
+      &:not(:first-child) {
+        margin-top: 0.75rem;
+      }
+    }
+  }
+
+  &.left {
+    margin-right: 2rem;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 1.75rem;
+      left: 100%;
+      height: 0;
+      width: 0;
+      border: 0.75rem solid transparent;
+      border-left: 0.75rem solid lighten($background-color, 3%);
+    }
+  }
+
+  &.right {
+    margin-left: 2rem;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 1.75rem;
+      right: 100%;
+      height: 0;
+      width: 0;
+      border: 0.75rem solid transparent;
+      border-right: 0.75rem solid lighten($background-color, 3%);
+    }
+    @include screen-sm {
+      margin-left: 1.25rem;
+      &::before {
+        border-width: 0.5rem;
+      }
+    }
+  }
+
+  @include screen-sm {
+    margin-top: -1.25rem;
+    h3 {
+      font-size: 1.5rem;
+      padding: 0.75rem;
+      .link {
+        display: block;
+      }
+      .date {
+        display: block;
+        margin-top: 0.5rem;
+      }
+    }
+    ul {
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      line-height: 1.4rem;
+      li {
+        .bullet {
+          width: 0.75rem;
+          height: 0.75rem;
+          margin-top: 0.4rem;
+          margin-right: 0.75rem;
+        }
+      }
+    }
+  }
+}

@@ -3,8 +3,14 @@ $md: 768px;
 $lg: 1440px;
 $xl: 1920px;
 
+$page-padding-lg: 3.25rem;
+$page-padding-md: 2rem;
+$page-padding-sm: 1.5rem;
+
 $background-color: rgb(0, 26, 28);
+$light-gray: #dcdcdc;
 $dark-green: #23484D;
+$yellow: #eaf991;
 
 @mixin screen-xl {
   @media (min-width: $xl) {
@@ -25,7 +31,7 @@ $dark-green: #23484D;
 }
 
 @mixin screen-sm {
-  @media (min-width: $sm) and (max-width: 767.98px) {
+  @media (max-width: 767.98px) {
     @content;
   }
 }
@@ -34,4 +40,19 @@ $dark-green: #23484D;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+}
+
+@mixin screen {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: $page-padding-lg;
+  background-color: $background-color;
+
+  @include screen-md {
+    padding: $page-padding-md;
+  }
+  @include screen-sm {
+    padding: $page-padding-sm;
+  }
 }

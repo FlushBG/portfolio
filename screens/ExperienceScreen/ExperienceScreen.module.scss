@@ -1,0 +1,10 @@
+@import 'styles/variables';
+
+.body {
+   @include screen();
+   align-items: center;
+   
+   @include screen-sm {
+      align-items: flex-start;
+   }
+}

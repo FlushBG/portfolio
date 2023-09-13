@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 import { m, useScroll } from 'framer-motion';
 import { imageData } from './image-data';
-import useParallax from '../../hooks/useParallax';
 import { VerticalParallaxImage } from '../../components/VerticalParallax';
 import classes from './HomeScreen.module.scss';
 import localFont from 'next/font/local';
 import { cn } from '../../utils/classname-utils';
+import { ScrollIndicator } from '../../components';
 
-const moonliteSolid = localFont({
-  src: '../../public/fonts/Moonlite Solid.ttf',
+const bebas = localFont({
+  src: '../../public/fonts/BebasNeue Regular.otf',
 });
 
+// TODO: Add a context setting for enabling or disabling parallax FX.
+// Default for mobile will be false, for other screens: true.
+// Add it to an app context
 const HomeScreen: React.FC = () => {
-  const [showGreeting, setShowGreeting] = useState<boolean>(true);
+  //const [showGreeting, setShowGreeting] = useState<boolean>(true);
   const screenRef = React.useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: screenRef,
@@ -21,15 +24,20 @@ const HomeScreen: React.FC = () => {
 
   return (
     <section ref={screenRef} className={classes.body}>
-      {showGreeting && <m.h1
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        onViewportLeave={() => setShowGreeting(false)}
-        className={cn(classes.greeting)}
+      <m.h1
+        initial={{ opacity: 0, y: '3rem' }}
+        animate={{ opacity: 1, y: '-4rem' }}
+        transition={{
+          duration: 1.25,
+          repeat: 1,
+          ease: 'easeOut',
+          repeatType: 'reverse',
+          repeatDelay: 3,
+        }}
+        className={cn(classes.greeting, bebas.className)}
       >
-        hello
-      </m.h1>}
+        Hello!
+      </m.h1>
       {imageData.map((data) => (
         <VerticalParallaxImage
           key={data.alt}
@@ -41,6 +49,7 @@ const HomeScreen: React.FC = () => {
           className={classes[data.className]}
         />
       ))}
+      <ScrollIndicator />
     </section>
   );
 };

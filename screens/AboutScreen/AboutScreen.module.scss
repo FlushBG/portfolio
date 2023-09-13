@@ -1,58 +1,120 @@
 @import 'styles/variables';
 
 .body {
-  height: 100vh;
-  padding: 3.25rem;
-  background-color: $background-color;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
-
-  @include screen-sm {
-   padding: 1.5rem;
-  
-  }
+  @include screen();
+  position: relative;
 }
 
-.heading, .subheading {
-   user-select: none;
-   font-family: Bebas Neue;
+.heading,
+.subheading,
+.paragraph,
+.action {
+  z-index: 1;
+  user-select: none;
 }
 
 .heading {
-  font-size: 5rem;
-  line-height: 3rem;
+  margin-top: 15vh;
+  font-size: 7.75rem;
+  line-height: 6.25rem;
   color: white;
+  
+  @include screen-md {
+    margin-top: 10vh;
+    font-size: 5.5rem;
+    line-height: 4.5rem;
+    margin-bottom: 0.5rem;
+  }
 
   @include screen-sm {
-   font-size: 3.5rem;
-   line-height: 3rem;
-   margin-bottom: 1rem;
+    margin-top: 10vh;
+    font-size: 3.25rem;
+    line-height: 2.75rem;
+    margin-bottom: 0.5rem;
+    span {
+      display: block;
+    }
   }
 }
 
 .subheading {
-  font-size: 3.5rem;
-  line-height: 2.5rem;
-  color: #eaf991;
+  font-size: 5.75rem;
+  line-height: 4.5rem;
+  color: $yellow;
+
+  @include screen-md {
+    font-size: 4.5rem;
+    line-height: 3.75rem;
+  }
 
   @include screen-sm {
-   font-size: 2.75rem;
-   line-height: 2.5rem;
+    font-size: 2.5rem;
+    line-height: 2.25rem;
+    span {
+      display: block;
+    }
   }
 }
 
 .paragraph {
-  color: #dcdcdc;
+  color: $light-gray;
   max-width: 50vw;
-  padding: 2rem 0;
-  font-size: 1.25rem;
+  padding-top: 4rem;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+
+  @include screen-md {
+    max-width: 65vw;
+    font-size: 1.3rem;
+  }
 
   @include screen-sm {
-   max-width: 100vw;
-   font-size: 1.1rem;
-   line-height: 1.25rem;
-   padding: 3.5rem 0;
+    max-width: 100vw;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    padding-top: 2.75rem;
+  }
+}
+
+.actionWrapper {
+  z-index: 1;
+}
+
+.action {
+  background-color: transparent;
+  color: $yellow;
+  border: 1px solid $yellow;
+  font-size: 1.25rem;
+  padding: 1rem 2rem;
+  margin: 4rem 0;
+  width: 15.5rem;
+  letter-spacing: 2.5px;
+  transition: letter-spacing .3s;
+
+  &:hover {
+    cursor: pointer;
+    letter-spacing: 3.5px;
+  }
+
+  @include screen-sm {
+    font-size: 1.1rem;
+    margin: 3.25rem 0 1rem 0;
+    width: 100%;
+  }
+}
+
+.backgroundText {
+  z-index: 0;
+  font-size: 35rem;
+  position: absolute;
+  font-weight: bold;
+  color: lighten($background-color, 1%);
+  top: 3rem;
+  left: -1rem;
+
+  @include screen-sm {
+    transform: rotate(-35deg);
+    font-size: 18rem;
+    left: -8rem; 
   }
 }

@@ -1,0 +1,12 @@
+@import 'styles/variables';
+
+.date {
+  color: $light-gray;
+  font-size: 1rem;
+  text-transform: uppercase;
+  padding: 1.5rem;
+
+  &.right {
+   justify-self: end;
+  }
+}
