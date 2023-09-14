@@ -1,5 +1,6 @@
 import React, { PropsWithChildren, useEffect, useMemo } from 'react';
 import useScreenSizeDetection from '@/hooks/useScreenSizeDetection';
+import LoadingScreen from './LoadingScreen';
 
 const Preloads = ({ children }: PropsWithChildren) => {
   const { detectScreenSize, isReady } = useScreenSizeDetection();
@@ -18,7 +19,7 @@ const Preloads = ({ children }: PropsWithChildren) => {
     return isReady;
   }, [isReady]);
 
-  return isAppReady ? <>{children}</> : <div>Loading screen</div>;
+  return isAppReady ? <>{children}</> : <LoadingScreen />;
 };
 
 export default Preloads;

@@ -11,14 +11,14 @@ import classes from './HomeScreen.module.scss';
 // TODO: Add a context setting for enabling or disabling parallax FX.
 // Default for mobile will be false, for other screens: true.
 // Add it to an app context
-const HomeScreen: React.FC = () => {
+const HomeScreen = () => {
   const { isMobile } = useScreenSizeDetection();
   const screenRef = React.useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: screenRef,
     offset: ['end end', 'end start'],
   });
-  
+
   return (
     <section ref={screenRef} className={classes.body}>
       <m.h1

@@ -1,18 +1,16 @@
-import { NestedLayout } from '../components';
-import AboutScreen from '../screens/AboutScreen';
-import DebugScreen from '../screens/DebugScreen';
-import ExperienceScreen from '../screens/ExperienceScreen';
-import HomeScreen from '../screens/HomeScreen/HomeScreen';
+import { Layout } from '@/components/app';
+import { AboutScreen, ExperienceScreen, HomeScreen } from '@/screens';
+import DebugScreen from '@/screens/DebugScreen';
 
 export default function Index() {
   return (
     <>
       <HomeScreen />
-      <NestedLayout>
+      <Layout>
         <AboutScreen />
         <ExperienceScreen />
         <DebugScreen />
-      </NestedLayout>
+      </Layout>
       <DebugScreen />
     </>
   );

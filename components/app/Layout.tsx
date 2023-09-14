@@ -2,11 +2,7 @@ import React, { PropsWithChildren } from 'react';
 import { FiLinkedin, FiMail, FiGithub } from 'react-icons/fi';
 import classes from './Layout.module.scss';
 
-const Layout = () => {
-  return <div>TODO</div>;
-};
-
-const NestedLayout = ({ children }: PropsWithChildren) => {
+const Layout = ({ children }: PropsWithChildren) => {
   return (
     <div className={classes.container}>
       <main>{children}</main>
@@ -26,4 +22,4 @@ const NestedLayout = ({ children }: PropsWithChildren) => {
   );
 };
 
-export { Layout, NestedLayout };
+export default Layout;
