@@ -13,7 +13,7 @@ const useScreenSizeDetection = () => {
 
   return {
     isMobile,
-    isReady: isMobile !== null,
+    isScreenReady: isMobile !== null,
     detectScreenSize,
   };
 };

@@ -9,10 +9,7 @@ export type VerticalParallaxProps = {
   outputRange: string[];
 };
 
-export type VerticalParallaxImageProps = Omit<
-  VerticalParallaxProps,
-  'children'
-> & {
+export type VerticalParallaxImageProps = Omit<VerticalParallaxProps, 'children'> & {
   src: string;
   alt: string;
   priority?: boolean;
