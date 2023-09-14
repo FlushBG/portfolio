@@ -1,10 +1,8 @@
 import React from 'react';
 import { m } from 'framer-motion';
+import { fonts } from '@/pages/_app';
+import { cn } from '@/utils/classname-utils';
 import classes from './ScrollIndicator.module.scss';
-import { Open_Sans } from 'next/font/google';
-import { cn } from '../../utils/classname-utils';
-
-const openSans = Open_Sans({ weight: '600', subsets: ['latin'] });
 
 const ScrollIndicator = () => {
   return (
@@ -19,7 +17,7 @@ const ScrollIndicator = () => {
           className={classes.indicator}
         />
       </div>
-      <div className={cn(classes.text, openSans.className)}>Scroll Me</div>
+      <div className={cn(classes.text, fonts.openSans)}>Scroll Me</div>
     </div>
   );
 };

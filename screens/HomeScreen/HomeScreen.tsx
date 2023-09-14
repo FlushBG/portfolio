@@ -1,27 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { m, useScroll } from 'framer-motion';
-import { imageData } from './image-data';
-import { VerticalParallaxImage } from '../../components/VerticalParallax';
+import { fonts } from '@/pages/_app';
+import { ScrollIndicator } from '@/components';
+import { VerticalParallaxImage } from '@/components/VerticalParallax';
+import useScreenSizeDetection from '@/hooks/useScreenSizeDetection';
+import { cn } from '@/utils/classname-utils';
+import { getImageData } from './image-data';
 import classes from './HomeScreen.module.scss';
-import localFont from 'next/font/local';
-import { cn } from '../../utils/classname-utils';
-import { ScrollIndicator } from '../../components';
-
-const bebas = localFont({
-  src: '../../public/fonts/BebasNeue Regular.otf',
-});
 
 // TODO: Add a context setting for enabling or disabling parallax FX.
 // Default for mobile will be false, for other screens: true.
 // Add it to an app context
 const HomeScreen: React.FC = () => {
-  //const [showGreeting, setShowGreeting] = useState<boolean>(true);
+  const { isMobile } = useScreenSizeDetection();
   const screenRef = React.useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: screenRef,
     offset: ['end end', 'end start'],
   });
-
+  
   return (
     <section ref={screenRef} className={classes.body}>
       <m.h1
@@ -34,11 +31,11 @@ const HomeScreen: React.FC = () => {
           repeatType: 'reverse',
           repeatDelay: 3,
         }}
-        className={cn(classes.greeting, bebas.className)}
+        className={cn(classes.greeting, fonts.bebas)}
       >
         Hello!
       </m.h1>
-      {imageData.map((data) => (
+      {getImageData(isMobile).map((data) => (
         <VerticalParallaxImage
           key={data.alt}
           src={data.src}

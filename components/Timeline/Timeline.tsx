@@ -1,10 +1,9 @@
-import { m } from 'framer-motion';
 import Image from 'next/image';
-import { isMobile } from '../../utils/screen-utils';
-import ClientOnly from '../ClientOnly';
-import classes from './Timeline.module.scss';
+import { m } from 'framer-motion';
 import TimelineCard from './TimelineCard';
 import TimelineDate from './TimelineDate';
+import classes from './Timeline.module.scss';
+import useScreenSizeDetection from '@/hooks/useScreenSizeDetection';
 
 export enum GridPosition {
   Left = 'left',
@@ -21,8 +20,10 @@ type TimelineProps = {
 };
 
 const Timeline = ({ items = [] }: TimelineProps) => {
+  const { isMobile } = useScreenSizeDetection();
+
   const renderLeftSide = (position: GridPosition) => {
-    if (isMobile()) return null;
+    if (isMobile) return null;
     return position === GridPosition.Left ? (
       <TimelineCard position={position} />
     ) : (
@@ -31,7 +32,7 @@ const Timeline = ({ items = [] }: TimelineProps) => {
   };
 
   const renderRightSide = (position: GridPosition) => {
-    if (isMobile()) return <TimelineCard position={GridPosition.Right} />;
+    if (isMobile) return <TimelineCard position={GridPosition.Right} />;
     return position === GridPosition.Left ? (
       <TimelineDate position={position} />
     ) : (
@@ -41,25 +42,23 @@ const Timeline = ({ items = [] }: TimelineProps) => {
 
   return (
     <div className={classes.timeline}>
-      <ClientOnly>
-        {TEST_DATA.map((item) => (
-          <div key={item.position} className={classes.item}>
-            {renderLeftSide(item.position)}
-            <m.div
-              initial={{ scale: 0.25 }}
-              whileInView={{ scale: [0.25, 1.4, 1] }}
-              transition={{ duration: 0.75, type: 'spring' }}
-              viewport={{ once: true }}
-              className={classes.icon}
-            >
-              <div>
-                <Image src='/icons/accedia.ico' alt='Accedia' fill />
-              </div>
-            </m.div>
-            {renderRightSide(item.position)}
-          </div>
-        ))}
-      </ClientOnly>
+      {TEST_DATA.map((item) => (
+        <div key={item.position} className={classes.item}>
+          {renderLeftSide(item.position)}
+          <m.div
+            initial={{ scale: 0.25 }}
+            whileInView={{ scale: [0.25, 1.4, 1] }}
+            transition={{ duration: 0.75, type: 'spring' }}
+            viewport={{ once: true }}
+            className={classes.icon}
+          >
+            <div>
+              <Image src='/icons/accedia.ico' alt='Accedia' fill />
+            </div>
+          </m.div>
+          {renderRightSide(item.position)}
+        </div>
+      ))}
     </div>
   );
 };

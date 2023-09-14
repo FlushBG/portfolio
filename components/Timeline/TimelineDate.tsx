@@ -1,16 +1,15 @@
 import React from 'react';
 import { m, Variants } from 'framer-motion';
-import { Open_Sans } from 'next/font/google';
+import { fonts } from '@/pages/_app';
+import { cn, cnif } from '@/utils/classname-utils';
+import useScreenSizeDetection from '@/hooks/useScreenSizeDetection';
 import { GridPosition } from './Timeline';
-import { cn, cnif } from '../../utils/classname-utils';
 import classes from './TimelineDate.module.scss';
-import { isMobile } from '../../utils/screen-utils';
 
 type TimelineDateProps = {
   position: GridPosition;
 };
 
-const openSans = Open_Sans({ subsets: ['latin'] });
 const variants: Variants = {
   initial_left: { opacity: 0, x: '6rem' },
   initial_right: { opacity: 0, x: '-6rem' },
@@ -19,6 +18,8 @@ const variants: Variants = {
 };
 
 const TimelineDate = ({ position }: TimelineDateProps) => {
+  const { isMobile } = useScreenSizeDetection();
+
   return (
     <m.div
       variants={variants}
@@ -28,8 +29,8 @@ const TimelineDate = ({ position }: TimelineDateProps) => {
       viewport={{ once: true }}
       className={cn(
         classes.date,
-        openSans.className,
-        cnif(!isMobile(), classes[position])
+        fonts.openSans,
+        cnif(!isMobile, classes[position])
       )}
     >
       Sep 2020 - Present

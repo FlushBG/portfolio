@@ -1,20 +1,12 @@
-import React, { useEffect } from 'react';
-import localFont from 'next/font/local';
-import { Raleway } from 'next/font/google';
-import classes from './AboutScreen.module.scss';
-import { cn } from '../../utils/classname-utils';
+import React from 'react';
 import { m } from 'framer-motion';
-import { isMobile } from '../../utils/screen-utils';
-
-const raleway = Raleway({ subsets: ['latin'] });
-const bebas = localFont({
-  src: '../../public/fonts/BebasNeue Regular.otf',
-});
-const bebasBook = localFont({
-  src: '../../public/fonts/BebasNeue Book.otf',
-});
+import { cn } from '@/utils/classname-utils';
+import classes from './AboutScreen.module.scss';
+import useScreenSizeDetection from '@/hooks/useScreenSizeDetection';
+import { fonts } from '@/pages/_app';
 
 const AboutScreen = () => {
+  const { isMobile } = useScreenSizeDetection();
   const goToContactForm = (): void => {
     const contactForm = document.getElementById('contact');
     contactForm?.scrollIntoView({ behavior: 'smooth' });
@@ -23,37 +15,37 @@ const AboutScreen = () => {
   return (
     <section className={classes.body}>
       <m.h1
-        initial={{ x: isMobile() ? '93vw' : '86vw' }}
+        initial={{ x: isMobile ? '93vw' : '86vw' }}
         whileInView={{ x: 0 }}
         transition={{ duration: 0.75, type: 'spring' }}
         viewport={{ once: true }}
-        className={cn(classes.heading, bebas.className)}
+        className={cn(classes.heading, fonts.bebas)}
       >
         <span>My name is</span> Angel Angelov.
       </m.h1>
       <m.h2
-        initial={{ x: isMobile() ? '-75vw' : '-85vw' }}
+        initial={{ x: isMobile ? '-75vw' : '-85vw' }}
         whileInView={{ x: 0 }}
         transition={{
           duration: 0.75,
-          delay: isMobile() ? 0 : 0.25,
+          delay: isMobile ? 0 : 0.25,
           type: 'spring',
         }}
         viewport={{ once: true }}
-        className={cn(classes.subheading, bebasBook.className)}
+        className={cn(classes.subheading, fonts.bebasBook)}
       >
         <span>I turn ideas into</span> digital solutions.
       </m.h2>
       <m.p
-        initial={{ x: isMobile() ? '93vw' : '86vw' }}
+        initial={{ x: isMobile ? '93vw' : '86vw' }}
         whileInView={{ x: 0 }}
         transition={{
           duration: 0.75,
-          delay: isMobile() ? 0 : 0.25,
+          delay: isMobile ? 0 : 0.25,
           type: 'spring',
         }}
         viewport={{ once: true }}
-        className={cn(classes.paragraph, raleway.className)}
+        className={cn(classes.paragraph, fonts.raleway)}
       >
         I&apos;m a frontend developer with a knack for making things happen.
         Whether you need a killer website, a mobile app that&apos;ll make your
@@ -67,24 +59,24 @@ const AboutScreen = () => {
         know what all that means - just trust me, I&apos;m good at what I do.
       </m.p>
       <m.div
-        initial={{ x: isMobile() ? '-93vw' : '-85vw' }}
+        initial={{ x: isMobile ? '-93vw' : '-85vw' }}
         whileInView={{ x: 0 }}
         transition={{
           duration: 0.75,
-          delay: isMobile() ? 0 : 0.5,
+          delay: isMobile ? 0 : 0.5,
           type: 'spring',
         }}
         viewport={{ once: true }}
         className={classes.actionWrapper}
       >
         <button
-          className={cn(classes.action, bebasBook.className)}
+          className={cn(classes.action, fonts.bebasBook)}
           onClick={goToContactForm}
         >
           Let&apos;s get in touch!
         </button>
       </m.div>
-      <div className={cn(classes.backgroundText, bebas.className)}>Portfolio</div>
+      <div className={cn(classes.backgroundText, fonts.bebas)}>Portfolio</div>
     </section>
   );
 };

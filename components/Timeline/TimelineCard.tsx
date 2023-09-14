@@ -1,21 +1,14 @@
 import React from 'react';
 import { m, useAnimationControls, Variants } from 'framer-motion';
-import localFont from 'next/font/local';
-import { Open_Sans, Raleway } from 'next/font/google';
+import { fonts } from '@/pages/_app';
+import { cn } from '@/utils/classname-utils';
+import useScreenSizeDetection from '@/hooks/useScreenSizeDetection';
 import { GridPosition } from './Timeline';
-import { cn, cnif } from '../../utils/classname-utils';
 import classes from './TimelineCard.module.scss';
-import { isMobile } from '../../utils/screen-utils';
 
 type TimelineCardProps = {
   position: GridPosition;
 };
-
-const raleway = Raleway({ subsets: ['latin'] });
-const openSans = Open_Sans({ subsets: ['latin'] });
-const bebasBook = localFont({
-  src: '../../public/fonts/BebasNeue Book.otf',
-});
 
 const variants: Variants = {
   initial_left: { opacity: 0, x: '-6rem' },
@@ -30,11 +23,12 @@ const mobileVariants: Variants = {
 };
 
 const TimelineCard = ({ position }: TimelineCardProps) => {
+  const { isMobile } = useScreenSizeDetection();
   const animationControls = useAnimationControls();
 
   return (
     <m.div
-      variants={isMobile() ? mobileVariants : variants}
+      variants={isMobile ? mobileVariants : variants}
       initial={`initial_${position}`}
       whileInView={`in_view_${position}`}
       transition={{
@@ -51,17 +45,17 @@ const TimelineCard = ({ position }: TimelineCardProps) => {
       }
       className={cn(classes.card, classes[position])}
     >
-      <h3 className={cn(bebasBook.className)}>
+      <h3 className={fonts.bebasBook}>
         <span className={classes.position}>Senior Full-Stack Developer</span>
         <span className={classes.link}> @ Accedia</span>
-        <span className={cn(classes.date, openSans.className)}>
+        <span className={cn(classes.date, fonts.openSans)}>
           Sep 2020 - Present
         </span>
       </h3>
       <m.ul
         initial={{ x: '100vw' }}
         animate={animationControls}
-        className={raleway.className}
+        className={fonts.raleway}
       >
         <m.li initial={{ x: '100vw' }} animate={animationControls}>
           <div className={classes.bullet} />
