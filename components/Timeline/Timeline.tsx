@@ -10,10 +10,7 @@ export enum GridPosition {
   Right = 'right',
 }
 
-const TEST_DATA = [
-  { position: GridPosition.Left },
-  { position: GridPosition.Right },
-];
+const TEST_DATA = [{ position: GridPosition.Left }, { position: GridPosition.Right }];
 
 type TimelineProps = {
   items?: any[];
@@ -24,20 +21,12 @@ const Timeline = ({ items = [] }: TimelineProps) => {
 
   const renderLeftSide = (position: GridPosition) => {
     if (isMobile) return null;
-    return position === GridPosition.Left ? (
-      <TimelineCard position={position} />
-    ) : (
-      <TimelineDate position={position} />
-    );
+    return position === GridPosition.Left ? <TimelineCard position={position} /> : <TimelineDate position={position} />;
   };
 
   const renderRightSide = (position: GridPosition) => {
     if (isMobile) return <TimelineCard position={GridPosition.Right} />;
-    return position === GridPosition.Left ? (
-      <TimelineDate position={position} />
-    ) : (
-      <TimelineCard position={position} />
-    );
+    return position === GridPosition.Left ? <TimelineDate position={position} /> : <TimelineCard position={position} />;
   };
 
   return (

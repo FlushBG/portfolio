@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint && tsc --pretty --noEmit",
+    "format": "prettier --write \"./**/*.(js|jsx|ts|tsx)\""
   },
   "dependencies": {
     "@types/node": "18.11.15",
@@ -24,6 +25,8 @@
   },
   "devDependencies": {
     "@types/react-icons": "^3.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.60.0",
+    "@next/eslint-plugin-next": "^13.4.7",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.20",
     "sass": "^1.57.1"
